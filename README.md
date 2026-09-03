@@ -1,5 +1,26 @@
 # Relatório de Estruturas de Dados Básicas II - Unidade 1
 
+## Como instalar LaTeX e Como Gerar o PDF
+
+Se você quer encher seu computador de pacotes provavelmente inúteis, digite no terminal: 
+
+```bash
+sudo apt update
+sudo apt install texlive-full
+```
+
+Caso não queira, descubra sozinho quais pacotes são necessários! 
+
+Depois disso, é só desabilitar as extensões de exibição de pdf no vscode, porque a extensão **LaTeX Workshop** já possui um leitor de PDF embutido (que é excelente, pois permite clicar no código e pular para a parte exata no PDF e vice-versa, chamado de SyncTeX). Como você também tem a extensão vscode-pdf instalada, elas entram em conflito quando você clica em um arquivo .pdf na barra lateral.
+
+- **Para compilar: clique no play verde.**
+
+![](compilar.png)
+
+- **Para gerar o arquivo em pdf: `Ctrl` + `Alt` + `V`**
+
+**OBS:** Uma vez gerado o arquivo em pdf, você só precisa recompilar após as alterações para ver no pdf.
+
 ## Link do Artigo
 [A Study on Contrast and Comparison between Bellman-Ford algorithm and Dijkstra's Algorithms](https://www.researchgate.net/publication/209423960_A_Study_on_Contrast_and_Comparison_between_Bellman-Ford_algorithm_and_Dijkstra%27s_Algorithms)
 

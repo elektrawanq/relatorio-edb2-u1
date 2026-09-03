@@ -1,0 +1,77 @@
+%
+%
+%
+%   ARQUIVO DE CONFIGURAÇÃO
+%
+%
+%
+\usepackage[left=2.5cm, top=3cm, right=2.5cm, bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{tkz-fct}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+
+\newcommand*{\aluno}[1]{\gdef\@aluno{#1}}
+\newcommand*{\matricula}[1]{\gdef\@matricula{#1}}
+
+\renewcommand*{\maketitle}{%
+    {\centering
+        {\large\MakeUppercase{Universidade Federal do Rio Grande do Norte}\par}
+        {\large\MakeUppercase{Instituto Metrópole Digital}\par}
+        {\large IMD1001 - Matemática Elementar\par}
+        {\large 2026.1 - Prova 1 - Turma 01\par}
+    }    
+    %
+    \vspace*{0.40cm}
+    %
+    \noindent Nome: \underline{\makebox[260pt][l]{\@aluno}}
+    \hfill
+    Mat.: \underline{\makebox[70pt]{\texttt{\@matricula}}}
+    \hspace{1pt}
+    Nota: \underline{\makebox[20pt]{}}\par
+    \vspace*{0.40cm}
+   
+%   \textcolor{red}{O preenchimento desses dados atesta que essa avaliação foi produzida de forma totalmente individual por parte do discente. O mesmo tem ciência que a identificação de respostas copiadas será levada para a coordenação e a direção do curso tomarem as medidas cabíveis.}
+   
+}
+
+\theoremstyle{definition}
+\newtheorem*{remark}{Observação}
+\newtheorem*{definition}{Definição}
+\newtheorem*{theorem}{Teorema}
+\newtheorem*{proposition}{Proposição}
+
+\newenvironment{solution}[1][Solução]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+\itshape 
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+
+\DeclareMathOperator{\sen}{sen}
+\renewcommand{\sin}{\sen}
+
+\newcommand{\imagem}[3][width=10cm]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[#1]{../imagens/#2}
+        \caption{#3}
+    \end{figure}
+}

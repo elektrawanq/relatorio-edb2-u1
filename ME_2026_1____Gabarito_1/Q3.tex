@@ -1,0 +1,69 @@
+% Escreva aqui a solução da questão 3.
+\textbf{VERDADEIRA}
+
+\textcolor{red}{ VERSÃO 1 } %Letícia
+
+%\begin{enumerate}[label=\Roman*)]
+%    \item Observe que a diferença entre os conjuntos pode ser reescrita como:
+    
+%    $\mathcal{U} \setminus A = \mathcal{U} \cap A^{C} = A^{C}$. Pela definição de igualdade de conjuntos, $(\mathcal{U} \setminus A) \subseteq A^{C}$.
+
+%    \item De uma das propriedades da interseção de conjuntos: $(A \cap B) \subseteq A$. 
+%    De uma das propriedades do complementar, $(A \cap B) \subseteq A \implies A^{C} \subseteq (A \cap B)^{C}$.
+
+%    Por transitividade, de (I) temos que: $(\mathcal{U} \setminus A) \subseteq (A \cap B)^{C}$. Portanto, a relação de inclusão é verdadeira.
+ 
+%\end{enumerate}
+De uma das propriedades da interseção de conjuntos, temos que $(A \cap B) \subseteq A$.
+Então, podemos reescrever:
+  \begin{align*}
+      (A \cap B) \subseteq A &\implies A^{C} \subseteq (A \cap B)^{C} \tag{$X \subseteq Y \implies Y^C \subseteq X^C$} \\
+      &\implies (\mathcal{U} \setminus A) \subseteq (A \cap B)^{C}. \tag{$\mathcal{U} \setminus X= X^{C}$}
+  \end{align*}
+
+\bigskip
+
+\textcolor{red}{CHAVE DE PONTUAÇÃO:
+\begin{itemize}
+    \item  Inclusão pela interseção \emph{(1,0 ponto)};
+    \item Uso de $X \subseteq Y \implies Y^C \subseteq X^C$ \emph{(1,0 ponto)};
+    \item  Uso da igualdade $\mathcal{U} \setminus X= X^{C}$ \emph{(1,0 ponto)}.
+\end{itemize} } 
+
+\bigskip
+
+
+
+
+\textcolor{red}{ VERSÃO 2 } %Letícia
+
+Observando o conjunto do lado esquerdo da relação de inclusão, percebe-se que a diferença entre os conjuntos pode ser reescrita como a interseção do conjunto à direita da diferença ($\mathcal{U}$) e do complementar do conjunto à esquerda ($A$). Ou de forma mais direta, a diferença entre o universo e o conjunto $A$ é igual ao complementar de $A$.
+
+\begin{align*}
+    \mathcal{U} \setminus A & = \mathcal{U} \cap A^{C} \\
+    & = A^{C}.
+\end{align*}
+
+No lado esquerdo da inclusão, por De Morgan, temos:
+$$(A \cap B)^{C} = A^{C} \cup B^{C}.$$
+
+Então,  $ \mathcal{U} \setminus A \subseteq (A \cap B)^{C}$ é equivalente a $A^{C} \subseteq A^{C} \cup B^{C}$. De uma das propriedades da união, a sentença é verdadeira.
+
+\bigskip
+
+
+
+%\textcolor{red}{ VERSÃO 3} %autor
+
+
+
+
+
+\bigskip
+
+\textcolor{red}{CHAVE DE PONTUAÇÃO:
+\begin{itemize}
+    \item  Uso da igualdade $\mathcal{U} \setminus X= X^{C}$ \emph{(1,0 ponto)};
+    \item  Igualdade pelo De Morgan \emph{(1,0 ponto)};
+    \item  Inclusão pela união \emph{(1,0 ponto)}.
+\end{itemize} }
