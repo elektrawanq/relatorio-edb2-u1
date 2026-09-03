@@ -21,6 +21,10 @@ Depois disso, é só desabilitar as extensões de exibição de pdf no vscode, p
 
 **OBS:** Uma vez gerado o arquivo em pdf, você só precisa recompilar após as alterações para ver no pdf.
 
+## Curso de LaTeX por Monitores de TONHAUNM Igor
+
+[Curso de LaTeX](https://www.youtube.com/playlist?list%3DPLvwKyqWd45N4ZjsPKmfZvfpJT40qD26u4&sa=D&source=editors&ust=1788476509696806&usg=AOvVaw3nIP1Yemp9aGMwtZy2hksp)
+
 ## Link do Artigo
 [A Study on Contrast and Comparison between Bellman-Ford algorithm and Dijkstra's Algorithms](https://www.researchgate.net/publication/209423960_A_Study_on_Contrast_and_Comparison_between_Bellman-Ford_algorithm_and_Dijkstra%27s_Algorithms)
 
