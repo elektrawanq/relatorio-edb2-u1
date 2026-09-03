@@ -1,12 +1,19 @@
 # Relatório de Estruturas de Dados Básicas II - Unidade 1
 
+## Link do Artigo
+[A Study on Contrast and Comparison between Bellman-Ford algorithm and Dijkstra's Algorithms](https://www.researchgate.net/publication/209423960_A_Study_on_Contrast_and_Comparison_between_Bellman-Ford_algorithm_and_Dijkstra%27s_Algorithms)
+
+## Hiperlink para o Arquivo do Artigo
+
+[A Study on Contrast and Comparison between Bellman-Ford algorithm and Dijkstra's Algorithms](A_Study_on_Contrast_and_Comparison_between_Bellman-Ford_algorithm_and_Dijkstras_Algorithms.pdf)
+
 ## Parte 1 - Divisão do Trabalho
 
 Com base nas instruções do documento "Trabalho_1_EDB2_Analise_Empirica_de_Algoritmos.pdf" e no contexto do artigo "A_Study_on_Contrast_and_Comparison_between_Bellman-Ford_algorithm_and_Dijkstras_Algorithms.pdf", o trabalho em grupo pode ser dividido em 4 componentes principais de responsabilidades.
 
 Aqui está uma proposta estruturada de divisão:
 
-**Componente 1: Revisão de Literatura e Fundamentação Teórica**
+**Componente 1: Revisão de Literatura e Fundamentação Teórica - Integrante: Pedro**
 
 * **Objetivo:** Extrair, compreender e documentar as informações do artigo base.
 
@@ -27,7 +34,7 @@ Aqui está uma proposta estruturada de divisão:
 
 
 
-**Componente 2: Implementação e Adaptação do Código**
+**Componente 2: Implementação e Adaptação do Código - Integrante: Letícia**
 
 * **Objetivo:** Traduzir os algoritmos do artigo para código funcional e prepará-los para o experimento prático.
 
@@ -48,7 +55,7 @@ Aqui está uma proposta estruturada de divisão:
 
 
 
-**Componente 3: Execução do Experimento e Coleta de Dados (Medição)**
+**Componente 3: Execução do Experimento e Coleta de Dados (Medição) - Integrante: Álvaro**
 
 * **Objetivo:** Rodar os algoritmos adaptados e realizar as medições empíricas de tempo de forma controlada.
 
@@ -69,7 +76,7 @@ Aqui está uma proposta estruturada de divisão:
 
 
 
-**Componente 4: Análise dos Resultados e Elaboração do Relatório**
+**Componente 4: Análise dos Resultados e Elaboração do Relatório - Integrante: Renan**
 
 * **Objetivo:** Comparar os dados obtidos com a teoria e compilar as descobertas no formato de entrega exigido.
 
@@ -92,7 +99,7 @@ Para complementar a divisão de tarefas, podemos mapear as seções obrigatória
 
 Dessa forma, cada membro (ou subgrupo) fica responsável por redigir as partes do relatório correspondentes ao seu trabalho prático:
 
-**Componente 1: Revisão de Literatura e Fundamentação Teórica**
+**Componente 1: Revisão de Literatura e Fundamentação Teórica - Integrante: Pedro**
 
 * **Responsabilidade no Relatório:** Redigir as bases teóricas do documento.
 * **Seções atribuídas:**
@@ -108,7 +115,7 @@ Dessa forma, cada membro (ou subgrupo) fica responsável por redigir as partes d
 
 
 
-**Componente 2: Implementação e Adaptação do Código**
+**Componente 2: Implementação e Adaptação do Código - Integrante: Letícia**
 
 * **Responsabilidade no Relatório:** Documentar como o código original foi modificado para fins de teste.
 * **Seções atribuídas:**
@@ -118,7 +125,7 @@ Dessa forma, cada membro (ou subgrupo) fica responsável por redigir as partes d
 
 
 
-**Componente 3: Execução do Experimento e Coleta de Dados (Medição)**
+**Componente 3: Execução do Experimento e Coleta de Dados (Medição) - Integrante: Álvaro**
 
 * **Responsabilidade no Relatório:** Explicar os parâmetros e o rigor científico da execução.
 * **Seções atribuídas:**
@@ -128,7 +135,7 @@ Dessa forma, cada membro (ou subgrupo) fica responsável por redigir as partes d
 
 
 
-**Componente 4: Análise dos Resultados e Elaboração do Relatório**
+**Componente 4: Análise dos Resultados e Elaboração do Relatório - Integrante: Renan**
 
 * **Responsabilidade no Relatório:** Consolidar os dados empíricos, gerar as visualizações e fechar o documento com as conclusões finais.
 * **Seções atribuídas:**
