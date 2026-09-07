@@ -1,97 +1,71 @@
 % Escreva aqui a solução da questão 9.
 
-
 \textcolor{red}{ VERSÃO 1 } %Rafaela
 
+Sejam $a, b, c, d \in \R_+^\ast$. Aplicando a desigualdade das médias
+aritmética e geométrica nos termos $a , b, c ,d$, temos:
+\begin{align*}
+    \sqrt[4]{a\cdot b\cdot c\cdot d} \leq \dfrac{a+b+c+d}{4}.\tag{I} \\
+\end{align*}
 
-Sejam $a, b, c, d \in \R_+^\ast$.
-Aplicando a desigualdade das médias aritmética e geométrica nos termos $a , b, c ,d$, temos:    
-        \begin{align*}
-            \sqrt[4]{a\cdot b\cdot c\cdot d} \leq \dfrac{a+b+c+d}{4}.\tag{I}\\
-        \end{align*}
-        
-Agora, aplicando a desigualdade das médias harmônica e geométrica nos termos $a, b, c, d$, temos:
-         \begin{align*}
-             \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} \leq \sqrt[4]{a\cdot b\cdot c\cdot d}. \tag{II} 
-         \end{align*}
+Agora, aplicando a desigualdade das médias harmônica e geométrica nos termos
+$a, b, c, d$, temos:
+\begin{align*}
+    \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} \leq \sqrt[4]{a\cdot b\cdot c\cdot d}. \tag{II}
+\end{align*}
 
 Por transitividade de (I) e (II), temos:
-        \begin{align*}
-%            \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} \leq \sqrt[4]{a\cdot b\cdot c\cdot d} \leq  \dfrac{a+b+c+d}{4} \\
-              \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} &\leq \dfrac{a+b+c+d}{4} \\
-            \implies \dfrac{16}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} &\leq a+b+c+d \\
-             \implies 16 &\leq (a+b+c+d) \cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right).  &\text{$\left(\dfrac 1 a+\dfrac 1 b+\dfrac 1 c+\dfrac 1 d>0\right)$}
-        \end{align*}
+\begin{align*}
+    %            \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} \leq \sqrt[4]{a\cdot b\cdot c\cdot d} \leq  \dfrac{a+b+c+d}{4} \\
+    \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}}           & \leq \dfrac{a+b+c+d}{4}                                                                                                                                      \\
+    \implies \dfrac{16}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} & \leq a+b+c+d                                                                                                                                                 \\
+    \implies 16                                                              & \leq (a+b+c+d) \cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right). & \text{$\left(\dfrac 1 a+\dfrac 1 b+\dfrac 1 c+\dfrac 1 d>0\right)$}
+\end{align*}
 
-Portanto, $(a+b+c+d) \cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right) \geq 16$, para quaisquer $a, b, c, d \in \R_+^\ast$.
-
-
-
-
-
-
-
-
+Portanto, $(a+b+c+d) \cdot
+    \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right) \geq 16$, para
+quaisquer $a, b, c, d \in \R_+^\ast$.
 
 %\bigskip
 
-
 \textcolor{red}{ VERSÃO 2} %Rafaela
 
+Sejam $a, b, c, d \in \R_+^\ast$. Aplicando a desigualdade das médias
+aritmética e geométrica nos termos $a , b, c ,d$, temos:
+\begin{align*}
+    \sqrt[4]{a\cdot b\cdot c\cdot d} \leq \dfrac{a+b+c+d}{4}.\tag{I} \\
+\end{align*}
 
-
-
-Sejam $a, b, c, d \in \R_+^\ast$.
-Aplicando a desigualdade das médias aritmética e geométrica nos termos $a , b, c ,d$, temos:    
-        \begin{align*}
-            \sqrt[4]{a\cdot b\cdot c\cdot d} \leq \dfrac{a+b+c+d}{4}.\tag{I}\\
-        \end{align*}
-
-        
-Agora, aplicando a desigualdade das médias harmônica e geométrica nos termos $a, b, c, d$, temos:
-         \begin{align*}
-             \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} \leq \sqrt[4]{a\cdot b\cdot c\cdot d} &\implies \dfrac{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}}{4} \geq \dfrac{1}{\sqrt[4]{a\cdot b\cdot c\cdot d}} \\
-             & \implies \dfrac{1}{\sqrt[4]{a\cdot b\cdot c\cdot d}} \leq  \dfrac{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}}{4}. \tag{II}
-         \end{align*}
+Agora, aplicando a desigualdade das médias harmônica e geométrica nos termos
+$a, b, c, d$, temos:
+\begin{align*}
+    \dfrac{4}{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}} \leq \sqrt[4]{a\cdot b\cdot c\cdot d} & \implies \dfrac{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}}{4} \geq \dfrac{1}{\sqrt[4]{a\cdot b\cdot c\cdot d}}            \\
+                                                                                                         & \implies \dfrac{1}{\sqrt[4]{a\cdot b\cdot c\cdot d}} \leq  \dfrac{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}}{4}. \tag{II}
+\end{align*}
 
 ``Multiplicando'' (I) e (II) (todos os termos são positivos), temos:
-        \begin{align*}
-            \left(\sqrt[4]{a\cdot b\cdot c\cdot d}\right) \cdot \left(\dfrac{1}{\sqrt[4]{a\cdot b\cdot c\cdot d}}\right) &\leq \left(\dfrac{a+b+c+d}{4}\right) \cdot \left(\dfrac{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}}{4}\right) \\
-            \implies 1 &\leq \dfrac{(a+b+c+d)\cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right)}{16} \\
-      %       \implies 1 \cdot 16 &\leq \dfrac{(a+b+c+d)\cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right)}{16} \cdot 16 \\
-             \implies 16 &\leq (a+b+c+d) \cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right).
-        \end{align*}
+\begin{align*}
+    \left(\sqrt[4]{a\cdot b\cdot c\cdot d}\right) \cdot \left(\dfrac{1}{\sqrt[4]{a\cdot b\cdot c\cdot d}}\right) & \leq \left(\dfrac{a+b+c+d}{4}\right) \cdot \left(\dfrac{\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}}{4}\right) \\
+    \implies 1                                                                                                   & \leq \dfrac{(a+b+c+d)\cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right)}{16}                       \\
+    %       \implies 1 \cdot 16 &\leq \dfrac{(a+b+c+d)\cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right)}{16} \cdot 16 \\
+    \implies 16                                                                                                  & \leq (a+b+c+d) \cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right).
+\end{align*}
 
-Portanto, $(a+b+c+d) \cdot \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right) \geq 16$, para quaisquer $a, b, c, d \in \R_+^\ast$.
-
-
-
-
-
-
-
-
-
-
+Portanto, $(a+b+c+d) \cdot
+    \left(\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}+\dfrac{1}{d}\right) \geq 16$, para
+quaisquer $a, b, c, d \in \R_+^\ast$.
 
 %\bigskip
 
 %\textcolor{red}{ VERSÃO 3} % autor
 
-
-
-
 %\bigskip
-
-
-
-
 
 \bigskip
 
 \textcolor{red}{CHAVE DE PONTUAÇÃO:
-\begin{itemize}
-    \item  Obtenção das 2 desigualdades das médias \emph{(1,0 ponto)};
-    \item Manipulação das inequações  \emph{(1,0 ponto)};
-    \item  Redação em si (desenho, notação e organização lógica) \emph{(1,0 ponto)}.
-\end{itemize} }
+    \begin{itemize}
+        \item  Obtenção das 2 desigualdades das médias \emph{(1,0 ponto)};
+        \item Manipulação das inequações \emph{(1,0 ponto)};
+        \item  Redação em si (desenho, notação e organização lógica) \emph{(1,0 ponto)}.
+    \end{itemize} }

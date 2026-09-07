@@ -1,58 +1,54 @@
-    % Escreva aqui a solução da questão 2.
+% Escreva aqui a solução da questão 2.
 \textbf{VERDADEIRA}
 
 \textcolor{red}{ VERSÃO 1 } %Letícia
 
-De uma das propriedades da interseção de conjuntos, temos que $A \cap B^{C} \subseteq B^{C}$.
-Então, podemos reescrever:
+De uma das propriedades da interseção de conjuntos, temos que $A \cap B^{C}
+    \subseteq B^{C}$. Então, podemos reescrever:
 \begin{align*}
-    A \cap B^{C} \subseteq B^{C} &\implies (B^{C})^{C} \subseteq (A \cap B^{C})^{C} \tag{$X \subseteq Y \implies Y^C \subseteq X^C$} \\ 
-    & \implies B \subseteq (A \cap B^{C})^{C} \tag{$(X^C)^C = X$}\\ 
-    &\implies B \subseteq (A \setminus B)^{C} . \tag{$X\setminus Y  = X \cap Y^{C}$}
+    A \cap B^{C} \subseteq B^{C} & \implies (B^{C})^{C} \subseteq (A \cap B^{C})^{C} \tag{$X \subseteq Y \implies Y^C \subseteq X^C$} \\
+                                 & \implies B \subseteq (A \cap B^{C})^{C} \tag{$(X^C)^C = X$}                                        \\
+                                 & \implies B \subseteq (A \setminus B)^{C} . \tag{$X\setminus Y  = X \cap Y^{C}$}
 \end{align*}
 
 Logo, a relação de inclusão é verdadeira.
 
-
-
-
 \bigskip
 
 \textcolor{red}{CHAVE DE PONTUAÇÃO:
-\begin{itemize}
-    \item  Inclusão pela interseção \emph{(1,0 ponto)};
-    \item Uso de $X \subseteq Y \implies Y^C \subseteq X^C$ e do complementar do complementar\emph{(1,0 ponto)};
-    \item  Uso da igualdade $X \setminus Y = X \cap Y^C$ \emph{(1,0 ponto)}.
-\end{itemize} } 
+    \begin{itemize}
+        \item  Inclusão pela interseção \emph{(1,0 ponto)};
+        \item Uso de $X \subseteq Y \implies Y^C \subseteq X^C$ e do complementar do
+              complementar\emph{(1,0 ponto)};
+        \item  Uso da igualdade $X \setminus Y = X \cap Y^C$ \emph{(1,0 ponto)}.
+    \end{itemize} }
 
 \bigskip
 
-
 \textcolor{red}{ VERSÃO 2} %Letícia
 
-
-Analisando o conjunto do lado direito da relação de inclusão, perceba que a diferença entre os conjuntos pode ser reescrita como a interseção do conjunto à esquerda da diferença ($A$) e do complementar do conjunto à direita ($B$), logo 
+Analisando o conjunto do lado direito da relação de inclusão, perceba que a
+diferença entre os conjuntos pode ser reescrita como a interseção do conjunto à
+esquerda da diferença ($A$) e do complementar do conjunto à direita ($B$), logo
 \begin{align}
-    (A\setminus B)^{C} & = (A \cap B^{C})^{C} & \tag{diferença de conjuntos} \\
-    & = A^{C} \cup B. & \tag{De Morgan e $(X^C)^C = X$}
+    (A\setminus B)^{C} & = (A \cap B^{C})^{C} & \tag{diferença de conjuntos}    \\
+                       & = A^{C} \cup B.      & \tag{De Morgan e $(X^C)^C = X$}
 \end{align}
 
-Então,  $B \subseteq (A \setminus B)^{C}$ é equivalente a $B \subseteq A^{C} \cup B$. De uma das propriedades da união de conjuntos, sabe-se que essa relação de inclusão é verdadeira.
-
-
+Então, $B \subseteq (A \setminus B)^{C}$ é equivalente a $B \subseteq A^{C}
+    \cup B$. De uma das propriedades da união de conjuntos, sabe-se que essa
+relação de inclusão é verdadeira.
 
 \bigskip
 
 %\textcolor{red}{ VERSÃO 3} % autor
 
-
-
-
 %\bigskip
 
 \textcolor{red}{CHAVE DE PONTUAÇÃO:
-\begin{itemize}
-    \item  Inclusão pela união \emph{(1,0 ponto)};
-    \item  Igualdade (ou inclusão) pelo DeMorgan e o complementar do complementar\emph{(1,0 ponto)};
-    \item  Uso da igualdade $X \setminus Y = X \cap Y^C$ \emph{(1,0 ponto)}.
-\end{itemize} }
+    \begin{itemize}
+        \item  Inclusão pela união \emph{(1,0 ponto)};
+        \item  Igualdade (ou inclusão) pelo DeMorgan e o complementar do
+              complementar\emph{(1,0 ponto)};
+        \item  Uso da igualdade $X \setminus Y = X \cap Y^C$ \emph{(1,0 ponto)}.
+    \end{itemize} }
