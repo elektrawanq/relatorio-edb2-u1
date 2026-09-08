@@ -1,4 +1,4 @@
-#include "Edge_Neighbor.hpp"
+#include "../include/Edge_Neighbor.hpp"
 
 std::vector<std::optional<value_type>> Dijkstra(value_type nodecount, value_type inf, std::vector<std::vector<Neighbor>> neighborhood)
 {

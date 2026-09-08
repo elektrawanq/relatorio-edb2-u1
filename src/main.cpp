@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Edge_Neighbor.hpp"
-#include "csvparser.hpp"
+#include "../include/Edge_Neighbor.hpp"
+#include "../include/csvparser.hpp"
 
 
 int main()

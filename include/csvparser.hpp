@@ -6,6 +6,7 @@
 #include <stdexcept>
 
 #include "Edge_Neighbor.hpp"
+
 struct CsvParser {
     static void save_csv(Dijkstra_Timer dij, Bellman_Ford_Timer bell, int size_n) {
 
