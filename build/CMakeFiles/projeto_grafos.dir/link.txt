@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/projeto_grafos.dir/link.d CMakeFiles/projeto_grafos.dir/src/main.cpp.o CMakeFiles/projeto_grafos.dir/src/dijkstra.cpp.o CMakeFiles/projeto_grafos.dir/src/bellman_ford.cpp.o -o projeto_grafos
