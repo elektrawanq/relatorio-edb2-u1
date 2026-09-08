@@ -22,6 +22,10 @@ int main()
     Dijkstra(NODECOUNT, INFINITY_VAL, neighborhood);
     dijkstra_timer.d_timer.end_timer();
 
+    bellman_ford_timer.BF_timer.start_timer();
+    Bellman_Ford(edges);
+    bellman_ford_timer.BF_timer.end_timer();
+
 
     csv.save_csv(dijkstra_timer, bellman_ford_timer, NODECOUNT);
 }
