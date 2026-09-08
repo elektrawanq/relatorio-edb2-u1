@@ -19,7 +19,7 @@ int main()
     std::vector<std::vector<Neighbor>> neighborhood(NODECOUNT);
 
     dijkstra_timer.d_timer.start_timer();
-    Dijkstra(NODECOUNT, INFINITY, neighborhood);
+    Dijkstra(NODECOUNT, INFINITY_VAL, neighborhood);
     dijkstra_timer.d_timer.end_timer();
 
 

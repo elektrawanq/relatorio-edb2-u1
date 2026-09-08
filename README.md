@@ -1,5 +1,11 @@
 # Relatório de Estruturas de Dados Básicas II - Unidade 1
 
+## Tasks
+
+- [] Dijkstra's algorithm
+
+- [] Bellman-Ford algorithm
+
 ## Como instalar LaTeX e Como Gerar o PDF
 
 Se você quer encher seu computador de pacotes provavelmente inúteis, digite no terminal:

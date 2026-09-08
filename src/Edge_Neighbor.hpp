@@ -9,7 +9,7 @@
 #include "timer.hpp"
 
 using value_type = int;
-const value_type INFINITY = std::numeric_limits<value_type>::max();
+const value_type INFINITY_VAL = std::numeric_limits<value_type>::max();
 const value_type NODECOUNT = 100;
 
 struct Bellman_Ford_Timer { 
@@ -36,7 +36,7 @@ struct Neighbor
     value_type weight;
 };
 
-void Dijkstra(value_type nodecount, value_type inf, std::vector<std::vector<Neighbor>> neighborhood);
+std::vector<std::optional<value_type>> Dijkstra(value_type nodecount, value_type inf, std::vector<std::vector<Neighbor>> neighborhood);
 void Bellman_Ford(std::vector<Edge> edges);
 
 #endif
