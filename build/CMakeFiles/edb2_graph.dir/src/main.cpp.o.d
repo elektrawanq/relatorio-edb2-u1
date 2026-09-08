@@ -156,5 +156,21 @@ CMakeFiles/edb2_graph.dir/src/main.cpp.o: \
  /usr/include/c++/16/fstream /usr/include/c++/16/bits/codecvt.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/16/bits/fstream.tcc \
+ /usr/include/c++/16/bits/fstream.tcc /usr/include/c++/16/filesystem \
+ /usr/include/c++/16/bits/fs_fwd.h /usr/include/c++/16/bits/fs_path.h \
+ /usr/include/c++/16/locale \
+ /usr/include/c++/16/bits/locale_facets_nonio.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/16/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/16/bits/locale_conv.h /usr/include/c++/16/iomanip \
+ /usr/include/c++/16/bits/quoted_string.h /usr/include/c++/16/sstream \
+ /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/codecvt \
+ /usr/include/c++/16/ext/concurrence.h \
+ /usr/include/c++/16/bits/shared_ptr.h \
+ /usr/include/c++/16/bits/shared_ptr_base.h \
+ /usr/include/c++/16/bits/allocated_ptr.h \
+ /usr/include/c++/16/bits/refwrap.h /usr/include/c++/16/bits/unique_ptr.h \
+ /usr/include/c++/16/ext/aligned_buffer.h \
+ /usr/include/c++/16/bits/fs_dir.h /usr/include/c++/16/bits/fs_ops.h \
  /home/alvkro/Projects/relatorio-edb2-u1/src/../include/Edge_Neighbor.hpp
