@@ -4,27 +4,17 @@
 #include <fstream>
 #include <iomanip>
 #include <stdexcept>
-#include "../include/RunningOpt.hpp"
-#include "../include/sequence.hpp"
 
+#include "Edge_Neighbor.hpp"
 struct CsvParser {
-    static void save_csv(RunningOptions& run_opt, Sequence& seq, value_type L, double total_time, double max_worker_time, double min_worker_time, double agregation_time) {
+    static void save_csv(Dijkstra_Timer dij, Bellman_Ford_Timer bell, int size_n) {
 
-        std::ofstream csv(run_opt.FILE_EXIT, std::ios::app); // append mode (2.1.1)
+        std::ofstream csv("results.csv", std::ios::app);
         if (csv.is_open()) {
             csv << std::scientific << std::setprecision(2);
-            csv << run_opt.MODE << ","
-            << run_opt.PARTITION << ","
-            << run_opt.W << ","
-            << L << ","
-            << total_time << ","
-            << max_worker_time << ","
-            << min_worker_time << ","
-            << agregation_time << ","
-            << seq.get_qtd() << ","
-            << seq.get_high_n() << ","
-            << seq.get_high_s() << "\n";
-
+            csv << dij.d_timer.total_time() << "," // Djikstra time
+            << bell.BF_timer.total_time() << "," // Bellman TIme
+            << size_n << ","; // Size of n
             csv.close();
         } else {
             throw std::runtime_error("Erro: o arquivo csv não pôde ser aberto.");
