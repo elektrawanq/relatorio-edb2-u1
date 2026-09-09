@@ -32,23 +32,62 @@
 
 \maketitle
 
-\begin{abstract}
-  This meta-paper describes the style to be used in articles and short papers
-  for SBC conferences. For papers in English, you should add just an abstract
-  while for the papers in Portuguese, we also ask for an abstract in
-  Portuguese (``resumo''). In both cases, abstracts should not have more than
-  10 lines and must be in the first page of the paper.
-\end{abstract}
+\section{Introdução}
 
-\begin{resumo}
-  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
-  resumos de artigos para publicação nos anais das conferências organizadas
-  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
-  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
-  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-  página do artigo.
-\end{resumo}
+O tema deste trabalho consiste na análise empírica de algoritmos de roteamento
+e busca de caminhos mínimos (\textit{shortest path}) em grafos. Dentro desse 
+contexto, o problema central a ser resolvido é a determinação da rota de menor 
+custo entre um vértice de origem e todos os demais vértices presentes em uma rede, 
+uma tarefa essencial para a comunicação e atualização de tabelas de roteamento intra-domínio.
+
+O objetivo do experimento é investigar empiricamente o comportamento prático desses 
+algoritmos e relacioná-lo à sua análise assintótica. Para isso, o tamanho da entrada 
+será aumentado de forma sistemática com o intuito de medir o tempo de execução de 
+cada algoritmo, comparando o crescimento observado na prática com a complexidade esperada.
+
+\section{Algoritmos e fontes}
+
+Para a resolução do problema de roteamento e busca de caminhos mínimos, utilizamos 
+como base o artigo ``A Study on Contrast and Comparison between Bellman-Ford algorithm 
+and Dijkstra's algorithm'' \cite{thippeswamy}. Este trabalho explora e compara dois dos 
+algoritmos mais populares empregados na atualização de tabelas de roteamento intra-domínio: 
+o Algoritmo de Bellman-Ford e o Algoritmo de Dijkstra.
+
+A origem do código adotado em nosso experimento derivou diretamente dessa literatura. 
+A implementação foi construída a partir da lógica estrutural e dos pseudocódigos fornecidos 
+pelos autores no artigo, que detalham os procedimentos fundamentais passo a passo para a 
+execução de ambos os algoritmos, sem a necessidade de importar códigos de repositórios externos.
+
+\section{Metodologia}
+
+\section{Análise teórica}
+
+Para compreender as diferenças de desempenho que serão observadas na prática, é fundamental 
+estabelecer primeiro a base teórica de cada abordagem. A complexidade assintótica dos algoritmos 
+de Dijkstra e Bellman-Ford decorre diretamente da estrutura de seus laços de repetição e do custo 
+de suas operações principais, conforme detalhado a seguir.
+
+No caso do algoritmo de Dijkstra, como o algoritmo visita cada vértice e avalia suas respectivas 
+conexões, o tempo de execução resulta na equação $O(|V|^2 + |E|)$, que pode ser assintoticamente 
+simplificada para $O(|V|^2)$, onde $|V|$ representa o número de vértices e $|E|$ o número de 
+arestas \cite{thippeswamy}. Em um cenário de rede hipotético onde o número de nós ($n$) é equivalente 
+ao número de arestas ($m$), o tempo de processamento estimado cresce proporcionalmente a $2n^2$, 
+confirmando o comportamento de ordem quadrática \cite{thippeswamy}.
+
+Por outro lado, o algoritmo de Bellman-Ford adota uma estratégia estruturalmente distinta. 
+Para assegurar que as distâncias mínimas sejam propagadas com precisão por toda a rede, 
+o algoritmo executa um laço de relaxamento sobre o conjunto completo de arestas exatamente 
+$|V|-1$ vezes \cite{thippeswamy}. Devido a essa varredura exaustiva, o tempo total é regido 
+pela multiplicação da quantidade de vértices pela de arestas, estabelecendo uma complexidade 
+assintótica geral de $O(|V| \times |E|)$ \cite{thippeswamy}. 
+
+Para o cenário onde o número de arestas ($m$) se iguala ao de nós ($n$), a complexidade 
+computacional do Bellman-Ford é matematicamente descrita pela função $27n^2 + 28n + 3$ 
+\cite{thippeswamy}. O termo dominante dessa equação determina uma ordem assintótica $O(n^2)$, 
+que pode ser simplificada para a proporção de $27n^2$ \cite{thippeswamy}. Embora a análise indique 
+um crescimento assintótico quadrático para ambos os algoritmos nessas condições, o coeficiente 
+substancialmente maior no Bellman-Ford fornece a justificativa teórica para o seu tempo de execução 
+prático ser consideravelmente superior ao de Dijkstra \cite{thippeswamy}.
 
 \section{General Information}
 
