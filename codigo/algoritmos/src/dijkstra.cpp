@@ -40,7 +40,7 @@ void Dijkstra(Graph &graph, const value_type &source_idx)
         throw std::out_of_range("The accessed index source_idx is out of the allowed bounds.\n");
     }
 
-    // Verificação de segurança: lembrar que os tamanhos são iguais porque tratamos de todos os  vértices
+    // Verificação de segurança: lembrar que os tamanhos são iguais porque tratamos de todos os vértices
     // neighborhood é uma lista de adjacência indexada por vértice — a posição i
     // guarda os vizinhos do vértice i, então ela naturalmente tem uma entrada
     // por vértice (mesmo que vazia), independente de haver ou não aresta de um vértice para ele mesmo.
