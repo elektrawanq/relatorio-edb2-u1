@@ -3,7 +3,7 @@
 
 #include <chrono>
 using time_point = std::chrono::high_resolution_clock::time_point;
-using duration = std::chrono::duration<double>;
+using duration = std::chrono::duration<double, std::milli>;
 
 class Timer {
     private:
