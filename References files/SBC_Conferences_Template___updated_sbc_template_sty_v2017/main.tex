@@ -121,12 +121,13 @@ prático ser consideravelmente superior ao de Dijkstra \cite{thippeswamy}.
 
 A presente seção apresenta os resultados empíricos coletados a partir
 dos algoritmos para fins de comparação entre seus tempos de execução
-com base no tamanho de suas entradas, resumidos na Tabela
-\ref{tab:dados_brutos}.
+com base no tamanho de suas entradas, neste caso sendo o número de
+vértices do grafo avaliado, resumidos na Tabela \ref{tab:dados_brutos}.
 
 \begin{table}[hbtp]
   \centering
-  \caption{Tempos de execução em milissegundos para grafos de tamanho $n$.}
+  \caption{Tempos médios de execução em milissegundos para grafos de
+  tamanho $n$.}
   \label{tab:dados_brutos}
   \begin{tabular}{ccc}
     \toprule
@@ -146,13 +147,31 @@ tamanho da entrada aumenta.
 
 \begin{figure}[hbtp]
   \centering
-  \includegraphics[width=0.8\textwidth]{grafico.pdf}
+  \includegraphics[width=0.8\textwidth]{grafico_tempos.pdf}
   \caption{Comparação do tempo de execução entre Dijkstra e Bellman-Ford.}
   \label{fig:grafico_tempos}
 \end{figure}
 
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{grafico_normalizado.pdf}
+  \caption{Comparação do tempo de execução normalizado entre Dijkstra
+  e Bellman-Ford.}
+  \label{fig:grafico_normalizado}
+\end{figure}
+
 A partir da leitura da Figura \ref{fig:grafico_tempos}, observa-se
-que [TODO: DESCREVER COMPORTAMENTO COM DADOS FINAIS].
+que ao definir o eixo x como o tamanho de entrada e o eixo y como o
+tempo de execução, [TODO: DESCREVER COMPORTAMENTO COM DADOS FINAIS].
+
+Por outro lado, ao analisar o eixo x como tamanho de entrada e o eixo
+y como o tempo de execução normalizado de 0 a 1, a Figura
+\ref{fig:grafico_normalizado}, nota-se que as curvas dos algoritmos
+alinham-se de maneira mais próxima a curva teórica de $O(|V|^2)$, sem
+apresentar desvios significativos. A normalização, realizada por meio
+da divisão da série de dados pelo valor máximo da curva, evidencia
+que o perfil de crescimento de ambos os algoritmos reflete a mesma
+complexidade polinomial.
 
 \section{Discussão}
 
@@ -161,10 +180,12 @@ notavelmente superior do algoritmo de Dijkstra em comparação ao
 algoritmo de Bellman-Ford no que diz respeito à busca de caminhos em
 roteamento intra-domínio. Os dados empíricos apresentados na Seção
 \ref{sec:resultados} corroboram a análise teórica de
-\cite{thippeswamy}, fortalecendo a premissa de que, embora
-ambos resolvam o problema de busca do caminho mais curto a partir de
-uma única origem, o algoritmo de Dijkstra desempenha este papel com
-menor custo computacional.
+\cite{thippeswamy}, fortalecendo a premissa de que, embora ambos
+resolvam o problema de busca do caminho mais curto a partir de uma
+única origem, o algoritmo de Dijkstra desempenha este papel com menor
+custo computacional. Portanto, para quantidades significantes de
+arestas, há uma substancial vantagem ao utilizar a busca de menor
+caminho por meio de Dijkstra.
 
 Isto ocorre pois o algoritmo de Dijkstra se baseia em uma abordagem
 gulosa, ou seja, a cada passo, é realizada uma escolha localmente
