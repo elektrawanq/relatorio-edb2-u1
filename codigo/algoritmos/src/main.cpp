@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../include/Edge_Neighbor.hpp"
 #include "../include/csvparser.hpp"
-
+#include "../include/graph_generator.hpp"
 
 int main()
 {
@@ -10,22 +10,22 @@ int main()
     Bellman_Ford_Timer bellman_ford_timer;
     CsvParser csv;
 
-    // Instanciando o grafo para o Bellman-Ford
-    // Cada elemento do vetor representa uma aresta no grafo
-    std::vector<Edge> edges;
+    // Instanciando a semente de geração aleatória do grafo
+    unsigned seed;
+    // Instanciando a quantidade de nós e de arestas
+    value_type nodecount, edgecount;
+    // Instanciando o grafo
+    Graph graph = generate_random_graph(nodecount, edgecount, MAX_WEIGHT, seed);
+    value_type source_idx;
 
-    // Instanciando o grafo para o Dijkstra
-    // neighborhood[u] retorna um vetor com todos os vizinhos do vértice 'u'
-    std::vector<std::vector<Neighbor>> neighborhood(NODECOUNT);
 
     dijkstra_timer.d_timer.start_timer();
-    Dijkstra(NODECOUNT, INFINITY_VAL, neighborhood);
+    Dijkstra(graph, source_idx);
     dijkstra_timer.d_timer.end_timer();
 
     bellman_ford_timer.BF_timer.start_timer();
-    Bellman_Ford(edges);
+    Bellman_Ford(graph, source_idx);
     bellman_ford_timer.BF_timer.end_timer();
 
-
-    csv.save_csv(dijkstra_timer, bellman_ford_timer, NODECOUNT);
+    csv.save_csv(dijkstra_timer, bellman_ford_timer, nodecount);
 }

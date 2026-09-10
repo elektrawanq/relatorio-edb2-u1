@@ -53,7 +53,7 @@ bool Check_negative_weight_cycles(const std::vector<Vertex> &vertices, const std
 
         assert(e >= 0 and static_cast<size_t>(e) < vertices.size() and "ed.source is out of bounds for vertices.");
         assert(d >= 0 and static_cast<size_t>(d) < vertices.size() and "ed.dest is out of bounds for vertices.");
-        
+
         if (vertices[e].distance < inf)
         {
             if (vertices[d].distance > vertices[e].distance + ed.weight)
