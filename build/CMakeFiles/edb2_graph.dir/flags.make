@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/alvkro/Projects/relatorio-edb2-u1/include
+CXX_INCLUDES = -I/home/alvkro/Projects/relatorio-edb2-u1/codigo/algoritmos/include
 
 CXX_FLAGS = -std=gnu++17
 

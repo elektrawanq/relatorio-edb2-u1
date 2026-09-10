@@ -8,9 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/alvkro/Projects/relatorio-edb2-u1/src/bellman_ford.cpp" "CMakeFiles/edb2_graph.dir/src/bellman_ford.cpp.o" "gcc" "CMakeFiles/edb2_graph.dir/src/bellman_ford.cpp.o.d"
-  "/home/alvkro/Projects/relatorio-edb2-u1/src/dijkstra.cpp" "CMakeFiles/edb2_graph.dir/src/dijkstra.cpp.o" "gcc" "CMakeFiles/edb2_graph.dir/src/dijkstra.cpp.o.d"
-  "/home/alvkro/Projects/relatorio-edb2-u1/src/main.cpp" "CMakeFiles/edb2_graph.dir/src/main.cpp.o" "gcc" "CMakeFiles/edb2_graph.dir/src/main.cpp.o.d"
+  "/home/alvkro/Projects/relatorio-edb2-u1/codigo/algoritmos/src/bellman_ford.cpp" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/bellman_ford.cpp.o" "gcc" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/bellman_ford.cpp.o.d"
+  "/home/alvkro/Projects/relatorio-edb2-u1/codigo/algoritmos/src/dijkstra.cpp" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/dijkstra.cpp.o" "gcc" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/dijkstra.cpp.o.d"
+  "/home/alvkro/Projects/relatorio-edb2-u1/codigo/algoritmos/src/graph_generator.cpp" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/graph_generator.cpp.o" "gcc" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/graph_generator.cpp.o.d"
+  "/home/alvkro/Projects/relatorio-edb2-u1/codigo/algoritmos/src/main.cpp" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/main.cpp.o" "gcc" "CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/main.cpp.o.d"
   "" "edb2_graph" "gcc" "CMakeFiles/edb2_graph.dir/link.d"
   )
 

@@ -129,77 +129,101 @@ edb2_graph/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/build
 .PHONY : edb2_graph/fast
 
-src/bellman_ford.o: src/bellman_ford.cpp.o
-.PHONY : src/bellman_ford.o
+codigo/algoritmos/src/bellman_ford.o: codigo/algoritmos/src/bellman_ford.cpp.o
+.PHONY : codigo/algoritmos/src/bellman_ford.o
 
 # target to build an object file
-src/bellman_ford.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/bellman_ford.cpp.o
-.PHONY : src/bellman_ford.cpp.o
+codigo/algoritmos/src/bellman_ford.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/bellman_ford.cpp.o
+.PHONY : codigo/algoritmos/src/bellman_ford.cpp.o
 
-src/bellman_ford.i: src/bellman_ford.cpp.i
-.PHONY : src/bellman_ford.i
+codigo/algoritmos/src/bellman_ford.i: codigo/algoritmos/src/bellman_ford.cpp.i
+.PHONY : codigo/algoritmos/src/bellman_ford.i
 
 # target to preprocess a source file
-src/bellman_ford.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/bellman_ford.cpp.i
-.PHONY : src/bellman_ford.cpp.i
+codigo/algoritmos/src/bellman_ford.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/bellman_ford.cpp.i
+.PHONY : codigo/algoritmos/src/bellman_ford.cpp.i
 
-src/bellman_ford.s: src/bellman_ford.cpp.s
-.PHONY : src/bellman_ford.s
+codigo/algoritmos/src/bellman_ford.s: codigo/algoritmos/src/bellman_ford.cpp.s
+.PHONY : codigo/algoritmos/src/bellman_ford.s
 
 # target to generate assembly for a file
-src/bellman_ford.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/bellman_ford.cpp.s
-.PHONY : src/bellman_ford.cpp.s
+codigo/algoritmos/src/bellman_ford.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/bellman_ford.cpp.s
+.PHONY : codigo/algoritmos/src/bellman_ford.cpp.s
 
-src/dijkstra.o: src/dijkstra.cpp.o
-.PHONY : src/dijkstra.o
+codigo/algoritmos/src/dijkstra.o: codigo/algoritmos/src/dijkstra.cpp.o
+.PHONY : codigo/algoritmos/src/dijkstra.o
 
 # target to build an object file
-src/dijkstra.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/dijkstra.cpp.o
-.PHONY : src/dijkstra.cpp.o
+codigo/algoritmos/src/dijkstra.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/dijkstra.cpp.o
+.PHONY : codigo/algoritmos/src/dijkstra.cpp.o
 
-src/dijkstra.i: src/dijkstra.cpp.i
-.PHONY : src/dijkstra.i
+codigo/algoritmos/src/dijkstra.i: codigo/algoritmos/src/dijkstra.cpp.i
+.PHONY : codigo/algoritmos/src/dijkstra.i
 
 # target to preprocess a source file
-src/dijkstra.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/dijkstra.cpp.i
-.PHONY : src/dijkstra.cpp.i
+codigo/algoritmos/src/dijkstra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/dijkstra.cpp.i
+.PHONY : codigo/algoritmos/src/dijkstra.cpp.i
 
-src/dijkstra.s: src/dijkstra.cpp.s
-.PHONY : src/dijkstra.s
+codigo/algoritmos/src/dijkstra.s: codigo/algoritmos/src/dijkstra.cpp.s
+.PHONY : codigo/algoritmos/src/dijkstra.s
 
 # target to generate assembly for a file
-src/dijkstra.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/dijkstra.cpp.s
-.PHONY : src/dijkstra.cpp.s
+codigo/algoritmos/src/dijkstra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/dijkstra.cpp.s
+.PHONY : codigo/algoritmos/src/dijkstra.cpp.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+codigo/algoritmos/src/graph_generator.o: codigo/algoritmos/src/graph_generator.cpp.o
+.PHONY : codigo/algoritmos/src/graph_generator.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+codigo/algoritmos/src/graph_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/graph_generator.cpp.o
+.PHONY : codigo/algoritmos/src/graph_generator.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+codigo/algoritmos/src/graph_generator.i: codigo/algoritmos/src/graph_generator.cpp.i
+.PHONY : codigo/algoritmos/src/graph_generator.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+codigo/algoritmos/src/graph_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/graph_generator.cpp.i
+.PHONY : codigo/algoritmos/src/graph_generator.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+codigo/algoritmos/src/graph_generator.s: codigo/algoritmos/src/graph_generator.cpp.s
+.PHONY : codigo/algoritmos/src/graph_generator.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+codigo/algoritmos/src/graph_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/graph_generator.cpp.s
+.PHONY : codigo/algoritmos/src/graph_generator.cpp.s
+
+codigo/algoritmos/src/main.o: codigo/algoritmos/src/main.cpp.o
+.PHONY : codigo/algoritmos/src/main.o
+
+# target to build an object file
+codigo/algoritmos/src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/main.cpp.o
+.PHONY : codigo/algoritmos/src/main.cpp.o
+
+codigo/algoritmos/src/main.i: codigo/algoritmos/src/main.cpp.i
+.PHONY : codigo/algoritmos/src/main.i
+
+# target to preprocess a source file
+codigo/algoritmos/src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/main.cpp.i
+.PHONY : codigo/algoritmos/src/main.cpp.i
+
+codigo/algoritmos/src/main.s: codigo/algoritmos/src/main.cpp.s
+.PHONY : codigo/algoritmos/src/main.s
+
+# target to generate assembly for a file
+codigo/algoritmos/src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codigo/algoritmos/src/main.cpp.s
+.PHONY : codigo/algoritmos/src/main.cpp.s
 
 # Help Target
 help:
@@ -210,15 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... edb2_graph"
-	@echo "... src/bellman_ford.o"
-	@echo "... src/bellman_ford.i"
-	@echo "... src/bellman_ford.s"
-	@echo "... src/dijkstra.o"
-	@echo "... src/dijkstra.i"
-	@echo "... src/dijkstra.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... codigo/algoritmos/src/bellman_ford.o"
+	@echo "... codigo/algoritmos/src/bellman_ford.i"
+	@echo "... codigo/algoritmos/src/bellman_ford.s"
+	@echo "... codigo/algoritmos/src/dijkstra.o"
+	@echo "... codigo/algoritmos/src/dijkstra.i"
+	@echo "... codigo/algoritmos/src/dijkstra.s"
+	@echo "... codigo/algoritmos/src/graph_generator.o"
+	@echo "... codigo/algoritmos/src/graph_generator.i"
+	@echo "... codigo/algoritmos/src/graph_generator.s"
+	@echo "... codigo/algoritmos/src/main.o"
+	@echo "... codigo/algoritmos/src/main.i"
+	@echo "... codigo/algoritmos/src/main.s"
 .PHONY : help
 
 

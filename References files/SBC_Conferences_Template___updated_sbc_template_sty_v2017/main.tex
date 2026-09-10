@@ -69,12 +69,14 @@ header em C++ responsável por medir o tempo de execução dos
 algoritmos de Dijkstra e  Bellman-Ford. A partir dos dados, é gerado
 e registrado um arquivo em formato \textit{Comma-Separated Values
 (csv)} para estruturar os resultados. Como método de testes,
-utilizou-se tamanhos de entradas $100$, $1.000$, $10.000$, $100.000$
-e $1.000.000$. Cada $n$ foi iterado 32 vezes, a fim de calcular a
-média aritmética e assim obter o tempo médio de execução, garantindo
-a integridade da análise diante da variabilidade dos algoritmos.
+utilizou-se tamanho de entrada de $200$ até $5000$, dividido em $10$
+intervalos iguais, vista a aplicação dos algoritmos em roteamento
+intra-domínio, que raramente ultrapassa alguns milhares de arestas e
+vértices. Cada $n$ foi iterado 32 vezes, a fim de calcular a média
+aritmética e assim obter o tempo médio de execução, garantindo a
+integridade da análise diante da variabilidade dos algoritmos.
 
-\section{Análise teórica}
+\section{Análise teórica} \label{sec:analise_teorica}
 
 Para compreender as diferenças de desempenho que serão observadas na
 prática, é fundamental estabelecer primeiro a base teórica de cada abordagem.
@@ -128,9 +130,17 @@ cada variação de tamanho de entrada dos algoritmos.
     \toprule
     Tamanho da Entrada ($n$) & Dijkstra (ms) & Bellman-Ford (ms) \\
     \midrule
-    100 & 0.5 & 1.2 \\
-    200 & 2.1 & 5.8 \\
-    300 & 4.8 & 15.2 \\
+    200 & 0.8 & 1.5 \\
+    680 & 9.0 & 17.0 \\
+    1160 & 25.7 & 47.4 \\
+    1640 & 21.7 & 40.2 \\
+    2120 & 58.2 & 109.6 \\
+    2600 & 114.6 & 212.1 \\
+    3080 & 143.6 & 269.2 \\
+    3560 & 185.3 & 343.2 \\
+    4040 & 233.4 & 422.9 \\
+    4520 & 266.5 & 471.1 \\
+    5000 & 335.1 & 613.6 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -159,17 +169,27 @@ a normalização.
 \end{figure}
 
 A partir da leitura da Figura \ref{fig:grafico_tempos}, observa-se
-que ao definir o eixo x como o tamanho de entrada e o eixo y como o
-tempo de execução, [TODO: DESCREVER COMPORTAMENTO COM DADOS FINAIS].
+que a diferença absoluta entre as curvas cresce de forma contínua à
+medida que o tamanho da entrada aumenta, refletindo o crescimento
+polinomial esperado para ambos os algoritmos. No entanto, ao calcular
+a razão entre os tempos de execução do Bellman-Ford e do Dijkstra
+para cada $n$ da Tabela \ref{tab:dados_brutos}, observa-se que essa
+razão permanece aproximadamente constante ao longo de toda a faixa
+testada, oscilando entre $1.77$ e $1.89$ desde as menores até as
+maiores instâncias avaliadas. Isso indica que o distanciamento visual
+observado no gráfico decorre do crescimento natural de duas curvas de
+mesma ordem assintótica com razão fixa entre si, e não de uma mudança
+de ordem em algum valor específico de $n$.
 
-Por outro lado, ao analisar o eixo x como tamanho de entrada e o eixo
+Diante disso, ao analisar o eixo x como tamanho de entrada e o eixo
 y como o tempo de execução normalizado de 0 a 1 na Figura
 \ref{fig:grafico_normalizado}, nota-se que as curvas dos algoritmos
 alinham-se de maneira mais próxima à curva teórica de $O(|V|^2)$, sem
 apresentar desvios significativos. A normalização, realizada por meio
 da divisão da série de dados pelo valor máximo da curva, evidencia
 que o perfil de crescimento de ambos os algoritmos reflete a mesma
-complexidade polinomial.
+complexidade polinomial e assintótica, observada pela razão constante
+entre as curvas dos algoritmos na Figura \ref{fig:grafico_tempos}.
 
 \section{Discussão}
 
@@ -189,33 +209,40 @@ Isto ocorre pois o algoritmo de Dijkstra se baseia em uma abordagem
 gulosa, ou seja, a cada passo, é realizada uma escolha localmente
 ótima, sem reconsiderar escolhas passadas. Para tal, o algoritmo
 seleciona o nó de peso mínimo que ainda não foi processado para
-realizar o relaxamento das arestas. Isto torna o algoritmo mais
-eficiente quando o grafo possui pesos exclusivamente positivos. Dessa
-forma, ao analisar seu comportamento em relação ao relaxamento de
-arestas adjacentes do grafo, sua complexidade reflete a abordagem,
-configurando-se como $O(|V|^2 + |E|)$, simplificada para $O(|V|^2)$.
+realizar o relaxamento das arestas, o que o torna mais eficiente
+quando o grafo possui pesos exclusivamente positivos, conforme a
+complexidade $O(|V|^2)$ estabelecida na Seção \ref{sec:analise_teorica}.
 
 Em contrapartida, o algoritmo de Bellman-Ford não adota uma
-estratégia gulosa. Em vez disso, com base na mesma operação de
-relaxamento de arestas, ele a executa exaustivamente em todas as
-arestas a cada iteração, totalizando exatas $|V| - 1$ vezes. Essa
-repetição garante a correta propagação das distâncias mínimas por
-todo o grafo e confere ao algoritmo a capacidade de processar arestas
-com pesos negativos. No entanto, o custo computacional dessa
-flexibilidade reflete-se em sua complexidade teórica de $O(|V| \times
-|E|)$, o que acarreta um aumento drástico no tempo de execução,
-especialmente conforme $|E|$ aumenta.
+estratégia gulosa: em vez disso, executa a mesma operação de
+relaxamento exaustivamente sobre todas as arestas a cada iteração,
+repetindo o processo por exatas $|V| - 1$ vezes, como exposto na
+Seção \ref{sec:analise_teorica}. Essa varredura exaustiva, embora
+mais custosa, é o que confere ao algoritmo a capacidade de processar
+corretamente arestas com pesos negativos --- vantagem que o Dijkstra não possui.
 
-Vale destacar que, para grafos de tamanho pequeno, o tempo de
-execução de ambos os algoritmos é virtualmente idêntico, como
-observado na Figura \ref{fig:grafico_tempos}. Com um tamanho de
-entrada $n$ suficientemente pequeno, o tempo de alocação inicial das
-estruturas e as constantes ocultas da notação dominam o tempo total,
-atenuando a diferença entre o crescimento de $|V|^2$ e $|V| \times
-|E|$. Diante dos resultados, o comportamento assintótico torna-se
-substancial a partir de [TODO: qual tamanho de entrada define o
-limiar de diferença], demonstrando o crescimento abrupto de tempo de
-execução do algoritmo de Bellman-Ford.
+Vale destacar que a razão entre os tempos de execução do Bellman-Ford
+e do Dijkstra manteve-se estável, entre $1.77$ e $1.89$, mesmo nas
+menores instâncias testadas. Isto indica que ambos os algoritmos já
+possuem o comportamento assintótico previsto desde $n = 200$, sem um
+período inicial em que sejam efetivamente equivalentes. Essa
+estabilidade é compatível com a suposição $|E| \approx |V|$ adotada
+na Seção \ref{sec:analise_teorica}, sob a qual ambos os algoritmos
+assumem ordem quadrática --- o que explica por que nenhuma mudança de
+ordem é observada ao longo da faixa avaliada.
+
+Cabe notar, contudo, que a razão prevista pelos polinômios teóricos
+levantados naquela seção — $2n^2$ para Dijkstra e $27n^2 + 28n + 3$
+para Bellman-Ford, uma razão próxima de $13.5$ — é substancialmente
+maior do que a razão observada na prática, de $\approx 1.8$. Essa
+discrepância é atribuível a fatores de implementação, como a estrutura de
+dados utilizada, efeitos de cache e otimizações do compilador, que não
+são capturados pela contagem teórica de operações elementares. Ainda
+assim, como a diferença absoluta entre os tempos cresce junto com
+$n^2$, o custo de se optar pelo Bellman-Ford em vez do Dijkstra
+torna-se cada vez mais significativo em termos práticos à medida que
+a rede aumenta, reforçando a preferência pelo Dijkstra em cenários de
+roteamento intra-domínio com um número elevado de roteadores e conexões.
 
 \section{Conclusão}
 
@@ -237,11 +264,12 @@ capaz de computar o caminho mais curto, visto que o peso total
 decresce infinitamente a cada travessia no ciclo.
 
 Por fim, cabe destacar que os tempos absolutos aferidos nesta análise
-são intrínsecos ao \textit{hardware} e ao sistema operacional
-utilizados no experimento. Como direcionamento para trabalhos
-futuros, sugere-se a execução de testes empíricos em grafos contendo
-arestas negativas, a fim de demonstrar na prática a falha inerente do
-algoritmo de Dijkstra e a resiliência do Bellman-Ford diante de tal cenário.
+são intrínsecos ao \textit{hardware}, sistema operacional e
+estruturas de dados utilizados no experimento. Como direcionamento
+para trabalhos futuros, sugere-se a execução de testes empíricos em
+grafos contendo arestas negativas, a fim de demonstrar na prática a
+falha inerente do algoritmo de Dijkstra e a resiliência do
+Bellman-Ford diante de tal cenário.
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
