@@ -4,24 +4,22 @@
 \usepackage{graphicx,url}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
-%\usepackage[latin1]{inputenc}  
-
+%\usepackage[latin1]{inputenc}
 
 \sloppy
 
 \title{Instructions for Authors of SBC Conferences\\ Papers and Abstracts}
 
 \author{Luciana P. Nedel\inst{1}, Rafael H. Bordini\inst{2}, Flávio Rech
-  Wagner\inst{1}, Jomi F. Hübner\inst{3} }
-
+Wagner\inst{1}, Jomi F. Hübner\inst{3} }
 
 \address{Instituto de Informática -- Universidade Federal do Rio Grande do Sul
   (UFRGS)\\
   Caixa Postal 15.064 -- 91.501-970 -- Porto Alegre -- RS -- Brazil
-\nextinstitute
+  \nextinstitute
   Department of Computer Science -- University of Durham\\
   Durham, U.K.
-\nextinstitute
+  \nextinstitute
   Departamento de Sistemas e Computação\\
   Universidade Regional de Blumenal (FURB) -- Blumenau, SC -- Brazil
   \email{\{nedel,flavio\}@inf.ufrgs.br, R.Bordini@durham.ac.uk,
@@ -34,68 +32,206 @@
 
 \section{Introdução}
 
-O tema deste trabalho consiste na análise empírica de algoritmos de roteamento
-e busca de caminhos mínimos (\textit{shortest path}) em grafos. Dentro desse 
-contexto, o problema central a ser resolvido é a determinação da rota de menor 
-custo entre um vértice de origem e todos os demais vértices presentes em uma rede, 
-uma tarefa essencial para a comunicação e atualização de tabelas de roteamento intra-domínio.
+O tema deste trabalho consiste na análise empírica de algoritmos de
+roteamento e busca de caminhos mínimos (\textit{shortest path}) em
+grafos. Dentro desse contexto, o problema central a ser resolvido é a
+determinação da rota de menor custo entre um vértice de origem e
+todos os demais vértices presentes em uma rede, uma tarefa essencial
+para a comunicação e atualização de tabelas de roteamento intra-domínio.
 
-O objetivo do experimento é investigar empiricamente o comportamento prático desses 
-algoritmos e relacioná-lo à sua análise assintótica. Para isso, o tamanho da entrada 
-será aumentado de forma sistemática com o intuito de medir o tempo de execução de 
-cada algoritmo, comparando o crescimento observado na prática com a complexidade esperada.
+O objetivo do experimento é investigar empiricamente o comportamento
+prático desses algoritmos e relacioná-lo à sua análise assintótica.
+Para isso, o tamanho da entrada será aumentado de forma sistemática
+com o intuito de medir o tempo de execução de cada algoritmo,
+comparando o crescimento observado na prática com a complexidade esperada.
 
 \section{Algoritmos e fontes}
 
-Para a resolução do problema de roteamento e busca de caminhos mínimos, utilizamos 
-como base o artigo ``A Study on Contrast and Comparison between Bellman-Ford algorithm 
-and Dijkstra's algorithm'' \cite{thippeswamy}. Este trabalho explora e compara dois dos 
-algoritmos mais populares empregados na atualização de tabelas de roteamento intra-domínio: 
-o Algoritmo de Bellman-Ford e o Algoritmo de Dijkstra.
+Para a resolução do problema de roteamento e busca de caminhos
+mínimos, utilizamos como base o artigo ``A Study on Contrast and
+Comparison between Bellman-Ford algorithm and Dijkstra's algorithm''
+\cite{thippeswamy}. Este trabalho explora e compara dois dos
+algoritmos mais populares empregados na atualização de tabelas de
+roteamento intra-domínio: o Algoritmo de Bellman-Ford e o Algoritmo de Dijkstra.
 
-A origem do código adotado em nosso experimento derivou diretamente dessa literatura. 
-A implementação foi construída a partir da lógica estrutural e dos pseudocódigos fornecidos 
-pelos autores no artigo, que detalham os procedimentos fundamentais passo a passo para a 
-execução de ambos os algoritmos, sem a necessidade de importar códigos de repositórios externos.
+A origem do código adotado em nosso experimento derivou diretamente
+dessa literatura. A implementação foi construída a partir da lógica
+estrutural e dos pseudocódigos fornecidos pelos autores no artigo,
+que detalham os procedimentos fundamentais passo a passo para a
+execução de ambos os algoritmos, sem a necessidade de importar
+códigos de repositórios externos.
 
 \section{Metodologia}
 
 /* Aqui é sua parte Letícia */
 
-Para a medição e comparação dos dois algoritmos, foi implementado um header em C++ responsável por medir
-o tempo ao executar o algoritmo \textit{(ms)}, e ao terminar a execução do algoritmo \textit{(ms)}, para o Dijkstra e o Bellman-Ford,
-geradas e registradas em um arquivo em formato \textit{Comma-Separated Values (csv)}, usados para formar os gráficos futuramente.
-Como método de testes, utilizou-se tamanhos de entradas como $100$, $1.000$, $10.000$, $1.000.000$ e $10.000.000$ cada 
-uma dessas entradas foram testadas 32 vezes e calculado uma média aritmética, dividindo pela quantidade de testes realizados. 
+Para a medição e comparação dos dois algoritmos, foi implementado um
+header em C++ responsável por medir
+o tempo ao executar o algoritmo \textit{(ms)}, e ao terminar a
+execução do algoritmo \textit{(ms)}, para o Dijkstra e o Bellman-Ford,
+geradas e registradas em um arquivo em formato
+\textit{Comma-Separated Values (csv)}, usados para formar os gráficos
+futuramente.
+Como método de testes, utilizou-se tamanhos de entradas como $100$,
+$1.000$, $10.000$, $1.000.000$ e $10.000.000$ cada
+uma dessas entradas foram testadas 32 vezes e calculado uma média
+aritmética, dividindo pela quantidade de testes realizados.
 
 \section{Análise teórica}
 
-Para compreender as diferenças de desempenho que serão observadas na prática, é fundamental 
-estabelecer primeiro a base teórica de cada abordagem. A complexidade assintótica dos algoritmos 
-de Dijkstra e Bellman-Ford decorre diretamente da estrutura de seus laços de repetição e do custo 
+Para compreender as diferenças de desempenho que serão observadas na
+prática, é fundamental
+estabelecer primeiro a base teórica de cada abordagem. A complexidade
+assintótica dos algoritmos
+de Dijkstra e Bellman-Ford decorre diretamente da estrutura de seus
+laços de repetição e do custo
 de suas operações principais, conforme detalhado a seguir.
 
-No caso do algoritmo de Dijkstra, como o algoritmo visita cada vértice e avalia suas respectivas 
-conexões, o tempo de execução resulta na equação $O(|V|^2 + |E|)$, que pode ser assintoticamente 
-simplificada para $O(|V|^2)$, onde $|V|$ representa o número de vértices e $|E|$ o número de 
-arestas \cite{thippeswamy}. Em um cenário de rede hipotético onde o número de nós ($n$) é equivalente 
-ao número de arestas ($m$), o tempo de processamento estimado cresce proporcionalmente a $2n^2$, 
+No caso do algoritmo de Dijkstra, como o algoritmo visita cada
+vértice e avalia suas respectivas
+conexões, o tempo de execução resulta na equação $O(|V|^2 + |E|)$,
+que pode ser assintoticamente
+simplificada para $O(|V|^2)$, onde $|V|$ representa o número de
+vértices e $|E|$ o número de
+arestas \cite{thippeswamy}. Em um cenário de rede hipotético onde o
+número de nós ($n$) é equivalente
+ao número de arestas ($m$), o tempo de processamento estimado cresce
+proporcionalmente a $2n^2$,
 confirmando o comportamento de ordem quadrática \cite{thippeswamy}.
 
-Por outro lado, o algoritmo de Bellman-Ford adota uma estratégia estruturalmente distinta. 
-Para assegurar que as distâncias mínimas sejam propagadas com precisão por toda a rede, 
-o algoritmo executa um laço de relaxamento sobre o conjunto completo de arestas exatamente 
-$|V|-1$ vezes \cite{thippeswamy}. Devido a essa varredura exaustiva, o tempo total é regido 
-pela multiplicação da quantidade de vértices pela de arestas, estabelecendo uma complexidade 
-assintótica geral de $O(|V| \times |E|)$ \cite{thippeswamy}. 
+Por outro lado, o algoritmo de Bellman-Ford adota uma estratégia
+estruturalmente distinta.
+Para assegurar que as distâncias mínimas sejam propagadas com
+precisão por toda a rede,
+o algoritmo executa um laço de relaxamento sobre o conjunto completo
+de arestas exatamente
+$|V|-1$ vezes \cite{thippeswamy}. Devido a essa varredura exaustiva,
+o tempo total é regido
+pela multiplicação da quantidade de vértices pela de arestas,
+estabelecendo uma complexidade
+assintótica geral de $O(|V| \times |E|)$ \cite{thippeswamy}.
 
-Para o cenário onde o número de arestas ($m$) se iguala ao de nós ($n$), a complexidade 
-computacional do Bellman-Ford é matematicamente descrita pela função $27n^2 + 28n + 3$ 
-\cite{thippeswamy}. O termo dominante dessa equação determina uma ordem assintótica $O(n^2)$, 
-que pode ser simplificada para a proporção de $27n^2$ \cite{thippeswamy}. Embora a análise indique 
-um crescimento assintótico quadrático para ambos os algoritmos nessas condições, o coeficiente 
-substancialmente maior no Bellman-Ford fornece a justificativa teórica para o seu tempo de execução 
+Para o cenário onde o número de arestas ($m$) se iguala ao de nós
+($n$), a complexidade
+computacional do Bellman-Ford é matematicamente descrita pela função
+$27n^2 + 28n + 3$
+\cite{thippeswamy}. O termo dominante dessa equação determina uma
+ordem assintótica $O(n^2)$,
+que pode ser simplificada para a proporção de $27n^2$
+\cite{thippeswamy}. Embora a análise indique
+um crescimento assintótico quadrático para ambos os algoritmos nessas
+condições, o coeficiente
+substancialmente maior no Bellman-Ford fornece a justificativa
+teórica para o seu tempo de execução
 prático ser consideravelmente superior ao de Dijkstra \cite{thippeswamy}.
+
+\section{Resultados} \label{sec:resultados}
+
+A presente seção apresenta os resultados empíricos coletados a partir
+dos algoritmos para fins de comparação entre seus tempos de execução
+com base no tamanho de suas entradas, resumidos na Tabela
+\ref{tab:dados_brutos}.
+
+\begin{table}[hbtp]
+  \centering
+  \caption{Tempos de execução em milissegundos para grafos de tamanho $n$.}
+  \label{tab:dados_brutos}
+  \begin{tabular}{ccc}
+    \toprule
+    Tamanho da Entrada ($n$) & Dijkstra (ms) & Bellman-Ford (ms) \\
+    \midrule
+    100 & 0.5 & 1.2 \\
+    200 & 2.1 & 5.8 \\
+    300 & 4.8 & 15.2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Para melhor compreensão comparativa, os dados apresentados foram
+plotados na Figura \ref{fig:grafico_tempos}, demonstrando visualmente
+o distanciamento entre as curvas de tempo de execução à medida que o
+tamanho da entrada aumenta.
+
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{grafico.pdf}
+  \caption{Comparação do tempo de execução empírico entre Dijkstra e
+  Bellman-Ford.}
+  \label{fig:grafico_tempos}
+\end{figure}
+
+A partir da leitura da Figura \ref{fig:grafico_tempos}, observa-se
+que [TODO: DESCREVER COMPORTAMENTO COM DADOS FINAIS].
+
+\section{Discussão}
+
+Sob a ótica dos resultados coletados, observa-se uma eficiência
+notavelmente superior do algoritmo de Dijkstra em comparação ao
+algoritmo de Bellman-Ford no que diz respeito à busca de caminhos em
+roteamento intra-domínio. Os dados empíricos apresentados na Seção
+\ref{sec:resultados} corroboram a análise teórica de
+\cite{thippeswamy}, fortalecendo a premissa de que, embora
+ambos resolvam o problema de busca do caminho mais curto a partir de
+uma única origem, o algoritmo de Dijkstra desempenha este papel com
+menor custo computacional.
+
+Isto ocorre pois o algoritmo de Dijkstra se baseia em uma abordagem
+gulosa, ou seja, a cada passo, é realizada uma escolha localmente
+ótima, subsequentemente não reconsiderando escolhas passadas. Para
+tal, o algoritmo seleciona o nó de peso mínimo que ainda não foi
+processado para realizar o relaxamento das arestas. Isto torna o
+algoritmo mais performático caso haja premissas estruturais baseadas
+na existência exclusiva de pesos positivos. Dessa forma, sua
+complexidade reflete a abordagem, configurando-se como
+$\mathcal{O}(|V|^2 + |E|)$, simplificada para $\mathcal{O}(|V|^2)$.
+
+Em contrapartida, o algoritmo de Bellman-Ford não adota uma
+estratégia gulosa. Em vez disso, ele executa um processo exaustivo de
+relaxamento de todas as arestas por exatas $|V| - 1$ vezes. Essa
+repetição garante a correta propagação das distâncias mínimas por
+todo o grafo e confere ao algoritmo a capacidade de processar arestas
+com pesos negativos. No entanto, o custo computacional dessa
+flexibilidade reflete-se em sua complexidade teórica de
+$\mathcal{O}(|V| \times |E|)$, o que acarreta um aumento drástico no
+tempo de execução, especialmente à medida que o grafo se torna mais
+denso, com um maior $|E|$.
+
+Vale destacar que, para grafos de tamanho pequeno, o tempo de
+execução de ambos os algoritmos é virtualmente idêntico, como
+observado na Figura \ref{fig:grafico_tempos}. Com um tamanho de
+entrada $n$ suficientemente pequeno, o tempo de alocação inicial das
+estruturas e as constantes ocultas da notação dominam o tempo total,
+atenuando a diferença entre o crescimento de $|V|^2$ e $|V| \times
+|E|$. Diante dos resultados, o comportamento assintótico torna-se
+substancial a partir de [TODO: qual tamanho de entrada define o
+limiar de diferença], demonstrando o crescimento abrupto do algoritmo
+de Bellman-Ford.
+
+\section{Conclusão}
+
+A análise empírica realizada neste trabalho confirma a superioridade
+em eficiência do algoritmo de Dijkstra frente ao Bellman-Ford na
+busca do caminho mais curto para roteamento intra-domínio. A
+abordagem gulosa poupa processamento em comparação à varredura
+exaustiva do Bellman-Ford, consolidando o Dijkstra como a escolha
+ideal para grafos com pesos estritamente positivos por apresentar
+tempos de execução consistentemente menores.
+
+Ainda assim, o algoritmo de Bellman-Ford mantém sua relevância
+fundamental em cenários de roteamento que admitem arestas de peso
+negativo. Seu elevado custo computacional justifica-se pela
+capacidade de encontrar caminhos em redes complexas de forma
+confiável. É imperativo ressaltar, contudo, que caso existam ciclos
+negativos alcançáveis a partir da origem, nenhum dos algoritmos é
+capaz de computar o caminho mais curto, visto que o peso total
+decresce infinitamente a cada travessia no ciclo.
+
+Por fim, cabe destacar que os tempos absolutos aferidos nesta análise
+são intrínsecos ao \textit{hardware} e ao sistema operacional
+utilizados no experimento. Como direcionamento para trabalhos
+futuros, sugere-se a execução de testes empíricos em grafos contendo
+arestas negativas, a fim de demonstrar na prática a falha inerente do
+algoritmo de Dijkstra e a resiliência do Bellman-Ford diante de tal cenário.
 
 \section{General Information}
 
@@ -164,7 +300,7 @@ caption.
   \centering
   \includegraphics[width=.3\textwidth]{fig2.jpg}
   \caption{This figure is an example of a figure caption taking more than one
-    line and justified considering margins mentioned in Section~\ref{sec:figs}.}
+  line and justified considering margins mentioned in Section~\ref{sec:figs}.}
   \label{fig:exampleFig2}
 \end{figure}
 
@@ -178,7 +314,7 @@ space before and after each caption.
 \begin{table}[ht]
   \centering
   \caption{Variables to be considered on the evaluation of interaction
-    techniques}
+  techniques}
   \label{tab:exTable1}
   \includegraphics[width=.7\textwidth]{table.jpg}
 \end{table}
