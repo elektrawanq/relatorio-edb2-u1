@@ -60,16 +60,14 @@ códigos de repositórios externos.
 /* Aqui é sua parte Letícia */
 
 Para a medição e comparação dos dois algoritmos, foi implementado um
-header em C++ responsável por medir
-o tempo ao executar o algoritmo \textit{(ms)}, e ao terminar a
-execução do algoritmo \textit{(ms)}, para o Dijkstra e o Bellman-Ford,
-geradas e registradas em um arquivo em formato
-\textit{Comma-Separated Values (csv)}, usados para formar os gráficos
-futuramente.
-Como método de testes, utilizou-se tamanhos de entradas como $100$,
-$1.000$, $10.000$, $1.000.000$ e $10.000.000$ cada
-uma dessas entradas foram testadas 32 vezes e calculado uma média
-aritmética, dividindo pela quantidade de testes realizados.
+header em C++ responsável por medir o tempo de execução dos
+algoritmos de Dijkstra e  Bellman-Ford. A partir dos dados, é gerado
+e registrado um arquivo em formato \textit{Comma-Separated Values
+(csv)} para estruturar os resultados. Como método de testes,
+utilizou-se tamanhos de entradas $100$, $1.000$, $10.000$, $100.000$
+e $1.000.000$. Cada $n$ foi iterado 32 vezes, a fim de calcular a
+média aritmética e assim obter o tempo médio de execução, garantindo
+a integridade da análise diante da variabilidade dos algoritmos.
 
 \section{Análise teórica}
 
@@ -125,8 +123,8 @@ A presente seção apresenta os resultados empíricos coletados a partir
 dos algoritmos para fins de comparação entre seus tempos de execução
 com base em um tamanho $n$ de suas entradas, neste caso sendo o
 número de vértices do grafo avaliado, resumidos na Tabela
-\ref{tab:dados_brutos}. Os tempos médios de execução foram calculados
-por meio da média aritmética de 32 repetições para cada tamanho de entrada.
+\ref{tab:dados_brutos}, sintetizando os tempos médios calculados para
+cada variação de tamanho de entrada dos algoritmos.
 
 \begin{table}[hbtp]
   \centering
