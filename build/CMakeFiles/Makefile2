@@ -85,12 +85,12 @@ clean: CMakeFiles/edb2_graph.dir/clean
 CMakeFiles/edb2_graph.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alvkro/Projects/relatorio-edb2-u1/build/CMakeFiles --progress-num=1,2,3,4 "Built target edb2_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alvkro/Projects/relatorio-edb2-u1/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target edb2_graph"
 .PHONY : CMakeFiles/edb2_graph.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/edb2_graph.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvkro/Projects/relatorio-edb2-u1/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvkro/Projects/relatorio-edb2-u1/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/edb2_graph.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvkro/Projects/relatorio-edb2-u1/build/CMakeFiles 0
 .PHONY : CMakeFiles/edb2_graph.dir/rule
@@ -102,7 +102,7 @@ edb2_graph: CMakeFiles/edb2_graph.dir/rule
 # codegen rule for target.
 CMakeFiles/edb2_graph.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edb2_graph.dir/build.make CMakeFiles/edb2_graph.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alvkro/Projects/relatorio-edb2-u1/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target edb2_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alvkro/Projects/relatorio-edb2-u1/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target edb2_graph"
 .PHONY : CMakeFiles/edb2_graph.dir/codegen
 
 # clean rule for target.
