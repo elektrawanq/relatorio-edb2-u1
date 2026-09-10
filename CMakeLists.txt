@@ -1,18 +1,19 @@
 cmake_minimum_required(VERSION 3.10)
-project(GraphAlgorithms CXX)
+project(edb2_graph CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Diretório dos arquivos de cabeçalho
-include_directories(${CMAKE_SOURCE_DIR}/include)
+# Caminho base dos fontes
+set(SRC_DIR ${CMAKE_SOURCE_DIR}/codigo/algoritmos)
 
-# Arquivos fonte localizados na pasta src
-set(SOURCES
-    src/main.cpp
-    src/dijkstra.cpp
-    src/bellman_ford.cpp
+add_executable(edb2_graph
+    ${SRC_DIR}/src/main.cpp
+    ${SRC_DIR}/src/dijkstra.cpp
+    ${SRC_DIR}/src/bellman_ford.cpp
+    ${SRC_DIR}/src/graph_generator.cpp
 )
 
-# Executável gerado
-add_executable(edb2_graph ${SOURCES})
+target_include_directories(edb2_graph PRIVATE
+    ${SRC_DIR}/include
+)
