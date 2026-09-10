@@ -9,11 +9,14 @@
 
 \sloppy
 
-\title{O Problema do Caminho Mais Curto:\\ Uma Abordagem Empírica sobre Algoritmos de Roteamento Intra-Domínio}
+\title{O Problema do Caminho Mais Curto:\\ Uma Abordagem Empírica
+sobre Algoritmos de Roteamento Intra-Domínio}
 
-\author{Álvaro B. Filho\inst{1}, Letícia Q. Wanderley\inst{1}, Luiz R. S. Pontes\inst{1}, Pedro L. Azevedo\inst{1} }
+\author{Álvaro B. Filho\inst{1}, Letícia Q. Wanderley\inst{1}, Luiz
+R. S. Pontes\inst{1}, Pedro L. Azevedo\inst{1} }
 
-\address{Instituto Metrópole Digital -- Universidade Federal do Rio Grande do Norte
+\address{Instituto Metrópole Digital -- Universidade Federal do Rio
+  Grande do Norte
   (UFRN)\\
   \email{\{alvaro.filho.111,leticia.queiroz.109,renan.pontes.704,pedro.azevedo.706\}@ufrn.edu.br}
 }
@@ -193,20 +196,21 @@ gulosa, ou seja, a cada passo, é realizada uma escolha localmente
 tal, o algoritmo seleciona o nó de peso mínimo que ainda não foi
 processado para realizar o relaxamento das arestas. Isto torna o
 algoritmo mais performático caso haja premissas estruturais baseadas
-na existência exclusiva de pesos positivos. Dessa forma, sua
-complexidade reflete a abordagem, configurando-se como
+na existência exclusiva de pesos positivos. Dessa forma, ao analisar
+seu comportamento em relação ao relaxamento de arestas adjacentes do
+grafo, sua complexidade reflete a abordagem, configurando-se como
 $O(|V|^2 + |E|)$, simplificada para $O(|V|^2)$.
 
 Em contrapartida, o algoritmo de Bellman-Ford não adota uma
-estratégia gulosa. Em vez disso, ele executa um processo exaustivo de
-relaxamento de todas as arestas por exatas $|V| - 1$ vezes. Essa
+estratégia gulosa. Em vez disso, com base na mesma operação de
+relaxamento de arestas, ele a executa exaustivamente em todas as
+arestas a cada iteração, totalizando exatas $|V| - 1$ vezes. Essa
 repetição garante a correta propagação das distâncias mínimas por
 todo o grafo e confere ao algoritmo a capacidade de processar arestas
 com pesos negativos. No entanto, o custo computacional dessa
-flexibilidade reflete-se em sua complexidade teórica de
-$O(|V| \times |E|)$, o que acarreta um aumento drástico no
-tempo de execução, especialmente à medida que o grafo se torna mais
-denso, com um maior $|E|$.
+flexibilidade reflete-se em sua complexidade teórica de $O(|V| \times
+|E|)$, o que acarreta um aumento drástico no tempo de execução,
+especialmente à medida que o grafo se torna mais denso, com um maior $|E|$.
 
 Vale destacar que, para grafos de tamanho pequeno, o tempo de
 execução de ambos os algoritmos é virtualmente idêntico, como
@@ -216,8 +220,8 @@ estruturas e as constantes ocultas da notação dominam o tempo total,
 atenuando a diferença entre o crescimento de $|V|^2$ e $|V| \times
 |E|$. Diante dos resultados, o comportamento assintótico torna-se
 substancial a partir de [TODO: qual tamanho de entrada define o
-limiar de diferença], demonstrando o crescimento abrupto do algoritmo
-de Bellman-Ford.
+limiar de diferença], demonstrando o crescimento abrupto de tempo de
+execução do algoritmo de Bellman-Ford.
 
 \section{Conclusão}
 
