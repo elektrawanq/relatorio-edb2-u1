@@ -64,10 +64,12 @@ header em C++ responsável por medir o tempo de execução dos
 algoritmos de Dijkstra e  Bellman-Ford. A partir dos dados, é gerado
 e registrado um arquivo em formato \textit{Comma-Separated Values
 (csv)} para estruturar os resultados. Como método de testes,
-utilizou-se tamanho de entrada de até $5000$, de 10 em 10 iterações, pois o artigo abordado
-está na área de redes, que geralmente os testes são feitos com no máximo milhares, não atingindo milhões. 
-Cada $n$ foi iterado 32 vezes, a fim de calcular a média aritmética e assim 
-obter o tempo médio de execução, garantindo a integridade da análise diante da variabilidade dos algoritmos.
+utilizou-se tamanho de entrada de até $5000$, de 10 em 10 iterações,
+pois o artigo abordado está na área de redes, que geralmente os
+testes são feitos com no máximo milhares, não atingindo milhões. Cada
+$n$ foi iterado 32 vezes, a fim de calcular a média aritmética e
+assim obter o tempo médio de execução, garantindo a integridade da
+análise diante da variabilidade dos algoritmos.
 
 \section{Análise teórica}
 
@@ -135,9 +137,17 @@ cada variação de tamanho de entrada dos algoritmos.
     \toprule
     Tamanho da Entrada ($n$) & Dijkstra (ms) & Bellman-Ford (ms) \\
     \midrule
-    100 & 0.5 & 1.2 \\
-    200 & 2.1 & 5.8 \\
-    300 & 4.8 & 15.2 \\
+    200 & 0.8 & 1.5 \\
+    680 & 9.0 & 17.0 \\
+    1160 & 25.7 & 47.4 \\
+    1640 & 21.7 & 40.2 \\
+    2120 & 58.2 & 109.6 \\
+    2600 & 114.6 & 212.1 \\
+    3080 & 143.6 & 269.2 \\
+    3560 & 185.3 & 343.2 \\
+    4040 & 233.4 & 422.9 \\
+    4520 & 266.5 & 471.1 \\
+    5000 & 335.1 & 613.6 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -167,7 +177,14 @@ a normalização.
 
 A partir da leitura da Figura \ref{fig:grafico_tempos}, observa-se
 que ao definir o eixo x como o tamanho de entrada e o eixo y como o
-tempo de execução, [TODO: DESCREVER COMPORTAMENTO COM DADOS FINAIS].
+tempo de execução, os dois algoritmos apresentam tempos quase
+indistinguíveis, próximos a zero milissegundos, para as instâncias
+iniciais. Contudo, à medida que a entrada ultrapassa a marca de 2000
+vértices, a curva do Bellman-Ford se descola abruptamente para cima,
+evidenciando um custo computacional consideravelmente mais acentuado
+em relação ao crescimento mais brando do Dijkstra. Dessa forma, em
+cenários de roteamento intra-domínio com mais de $2.000$ conexões e
+roteadores, o Dijkstra torna-se ferramenta indispensável na prática.
 
 Por outro lado, ao analisar o eixo x como tamanho de entrada e o eixo
 y como o tempo de execução normalizado de 0 a 1 na Figura
@@ -219,10 +236,11 @@ observado na Figura \ref{fig:grafico_tempos}. Com um tamanho de
 entrada $n$ suficientemente pequeno, o tempo de alocação inicial das
 estruturas e as constantes ocultas da notação dominam o tempo total,
 atenuando a diferença entre o crescimento de $|V|^2$ e $|V| \times
-|E|$. Diante dos resultados, o comportamento assintótico torna-se
-substancial a partir de [TODO: qual tamanho de entrada define o
-limiar de diferença], demonstrando o crescimento abrupto de tempo de
-execução do algoritmo de Bellman-Ford.
+|E|$. Diante dos resultados empíricos apresentados na Figura
+\ref{fig:grafico_tempos}, o comportamento assintótico e o peso da
+varredura exaustiva tornam-se substanciais a partir de $n = 2000$,
+ponto em que a curva do Bellman-Ford demonstra um crescimento abrupto
+e se distancia definitivamente da eficiência mantida pelo algoritmo de Dijkstra.
 
 \section{Conclusão}
 

@@ -8,6 +8,9 @@ import pandas as pd
 
 df = pd.read_csv("results.csv")
 
+df["dijkstra_time_ms"] = df["dijkstra_time_ms"] * 1000
+df["bellman_ford_time_ms"] = df["bellman_ford_time_ms"] * 1000
+
 fig1, ax1 = plt.subplots()
 max_execution_time = df["dijkstra_time_ms"].max()
 max_n_squared = (df["size_n"].max()) ** 2
