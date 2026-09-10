@@ -21,4 +21,14 @@ class Timer {
     }
 };
 
+struct Bellman_Ford_Timer
+{
+    Timer BF_timer;
+};
+
+struct Dijkstra_Timer
+{
+    Timer d_timer;
+};
+
 #endif

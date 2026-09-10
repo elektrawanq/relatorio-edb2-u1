@@ -1,5 +1,10 @@
+#include <cassert>
+#include <iostream>
+#include <stdexcept>
+
 #include "../include/Edge_Neighbor.hpp"
 
+// Função usada também em Dijkstra
 void Initialize_graph(std::vector<Vertex> &vertices, const value_type &source_idx, const value_type &inf)
 {
     for (std::size_t i = 0; i < vertices.size(); i++)
@@ -14,7 +19,7 @@ void Initialize_graph(std::vector<Vertex> &vertices, const value_type &source_id
 }
 
 // Relaxa todas as arestas |V| - 1 vezes
-void Relax_edges(std::vector<Vertex> &vertices, const std::vector<Edge> &edges, const value_type &inf)
+void Relax_edges_bellman_ford(std::vector<Vertex> &vertices, const std::vector<Edge> &edges, const value_type &inf)
 {
     for (std::size_t i = 1; i < vertices.size(); i++)
     {
@@ -22,6 +27,10 @@ void Relax_edges(std::vector<Vertex> &vertices, const std::vector<Edge> &edges, 
         {
             value_type e = ed.source;
             value_type d = ed.dest;
+
+            assert(e >= 0 and static_cast<size_t>(e) < vertices.size() and "ed.source is out of bounds for vertices.");
+            assert(d >= 0 and static_cast<size_t>(d) < vertices.size() and "ed.dest is out of bounds for vertices.");
+
             if (vertices[e].distance < inf)
             {
                 if (vertices[d].distance > vertices[e].distance + ed.weight)
@@ -41,6 +50,10 @@ bool Check_negative_weight_cycles(const std::vector<Vertex> &vertices, const std
     {
         value_type e = ed.source;
         value_type d = ed.dest;
+
+        assert(e >= 0 and static_cast<size_t>(e) < vertices.size() and "ed.source is out of bounds for vertices.");
+        assert(d >= 0 and static_cast<size_t>(d) < vertices.size() and "ed.dest is out of bounds for vertices.");
+        
         if (vertices[e].distance < inf)
         {
             if (vertices[d].distance > vertices[e].distance + ed.weight)
@@ -69,12 +82,12 @@ bool Bellman_Ford(Graph &graph, const value_type &source_idx)
 
     // Procedimento de Bellman-Ford
 
-    // Pré-condição: assume que toda Edge em graph.edges tem 
+    // Pré-condição: assume que toda Edge em graph.edges tem
     // source e dest dentro de [0, graph.vertices.size()), tratar no gerador de grafos
-    // Para fazer: Garantir que o gerador de grafos nunca seja capaz 
+    // Para fazer: Garantir que o gerador de grafos nunca seja capaz
     // de produzir uma Edge com source/dest fora de [0, nodecount)
     Initialize_graph(graph.vertices, source_idx, INFINITY_VAL);
-    Relax_edges(graph.vertices, graph.edges, INFINITY_VAL);
+    Relax_edges_bellman_ford(graph.vertices, graph.edges, INFINITY_VAL);
     bool has_negative_cycle = Check_negative_weight_cycles(graph.vertices, graph.edges, INFINITY_VAL);
     return !has_negative_cycle;
 }
