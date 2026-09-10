@@ -147,8 +147,7 @@ tamanho da entrada aumenta.
 \begin{figure}[hbtp]
   \centering
   \includegraphics[width=0.8\textwidth]{grafico.pdf}
-  \caption{Comparação do tempo de execução empírico entre Dijkstra e
-  Bellman-Ford.}
+  \caption{Comparação do tempo de execução entre Dijkstra e Bellman-Ford.}
   \label{fig:grafico_tempos}
 \end{figure}
 
@@ -175,7 +174,7 @@ processado para realizar o relaxamento das arestas. Isto torna o
 algoritmo mais performático caso haja premissas estruturais baseadas
 na existência exclusiva de pesos positivos. Dessa forma, sua
 complexidade reflete a abordagem, configurando-se como
-$\mathcal{O}(|V|^2 + |E|)$, simplificada para $\mathcal{O}(|V|^2)$.
+$O(|V|^2 + |E|)$, simplificada para $O(|V|^2)$.
 
 Em contrapartida, o algoritmo de Bellman-Ford não adota uma
 estratégia gulosa. Em vez disso, ele executa um processo exaustivo de
@@ -184,7 +183,7 @@ repetição garante a correta propagação das distâncias mínimas por
 todo o grafo e confere ao algoritmo a capacidade de processar arestas
 com pesos negativos. No entanto, o custo computacional dessa
 flexibilidade reflete-se em sua complexidade teórica de
-$\mathcal{O}(|V| \times |E|)$, o que acarreta um aumento drástico no
+$O(|V| \times |E|)$, o que acarreta um aumento drástico no
 tempo de execução, especialmente à medida que o grafo se torna mais
 denso, com um maior $|E|$.
 
