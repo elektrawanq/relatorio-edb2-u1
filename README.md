@@ -1,5 +1,9 @@
 # Relatório do artigo de análise de algoritmos Bellman-Ford e Dijkstra
 
+## Link do repositório
+
+[Relatório da Unidade 1 - EDB 2](https://github.com/elektrawanq/relatorio-edb2-u1.git)
+
 ## Resumo
 
 Este repositório tem como objetivo analisar o artigo _A Study on Contrast and Comparison between Bellman-Ford algorithm and Dijkstras Algorithms_, no que tange os algoritmos _Bellman-Ford_ e _Dijkstra_. Foi feito uma análise empírica do código, analisando a eficiência e fazendo uma comparação entre eles.
