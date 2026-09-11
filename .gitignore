@@ -20,9 +20,5 @@
 *.fdb_latexmk
 *.synctex.gz
 
-# Arquivos de estudo pessoal
-A_Study_on_Contrast_and_Comparison_between_Bellman-Ford_algorithm_and_Dijkstras_Algorithms.md
-traducao.pdf
-
 # Arquivo PDF gerado (opcional - remova esta linha se quiser commitar o PDF final)
-*.pdf
+#*.pdf
