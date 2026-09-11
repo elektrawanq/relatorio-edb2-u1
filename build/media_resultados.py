@@ -3,9 +3,6 @@
 Agrupa um results.csv com várias repetições e calcula apenas a média
 dos tempos para cada tamanho de grafo, mantendo o formato de colunas
 compatível com o script de plotagem.
-
-Uso:
-    python3 average_results.py [entrada.csv] [saida.csv]
 """
 import csv
 import statistics

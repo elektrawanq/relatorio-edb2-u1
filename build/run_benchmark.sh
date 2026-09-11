@@ -1,17 +1,4 @@
 #!/usr/bin/env bash
-# Roda o benchmark (Dijkstra vs Bellman-Ford) varias vezes por tamanho de
-# grafo, para depois tirar a media com o average_results.py.
-#
-# Uso:
-#   ./run_benchmark.sh <executavel> <repeticoes> <n_min> <n_max> <passo>
-#
-# Exemplo (32 repeticoes, n de 10 a 5000, passo 10 - igual ao seu sweep):
-#   ./run_benchmark.sh ./main 32 10 5000 10
-#
-# Cada repeticao roda o programa do zero (novo grafo aleatorio, nova
-# medicao de tempo), exatamente como ele ja funciona hoje. O script so
-# automatiza a repeticao e apaga o results.csv antigo antes de comecar,
-# para nao misturar com dados de outra unidade/versao do codigo.
 
 set -euo pipefail
 
